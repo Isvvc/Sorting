@@ -1,7 +1,6 @@
 def merge( arrA, arrB ):
     merged_arr = []
 
-    done = False
     while len(arrA) + len(arrB) > 0:
         if len(arrA) == 0:
             merged_arr += arrB
