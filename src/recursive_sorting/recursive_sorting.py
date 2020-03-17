@@ -17,9 +17,22 @@ def merge( arrA, arrB ):
     return merged_arr
 
 
-# TO-DO: implement the Merge Sort function below USING RECURSION
+import math
 def merge_sort( arr ):
-    # TO-DO
+    if len(arr) <= 1:
+        return arr
+    elif len(arr) == 2:
+        return merge([arr[0]],[arr[1]])
+    elif len(arr) == 3:
+        arrA = [arr[2]]
+        arrB = merge([arr[0]],[arr[1]])
+        return merge(arrA, arrB)
+    else:
+        arrA = arr[:int(math.ceil(len(arr) / 2))]
+        arrB = arr[-1 * int(math.floor(len(arr) / 2)):]
+        arrA_sorted = merge_sort(arrA)
+        arrB_sorted = merge_sort(arrB)
+        return merge(arrA_sorted, arrB_sorted)
 
     return arr
 
