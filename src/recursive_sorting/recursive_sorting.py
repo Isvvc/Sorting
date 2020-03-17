@@ -1,8 +1,18 @@
-# TO-DO: complete the helpe function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
-    # TO-DO
+    merged_arr = []
+
+    done = False
+    while len(arrA) + len(arrB) > 0:
+        if len(arrA) == 0:
+            merged_arr += arrB
+            arrB = []
+        elif len(arrB) == 0:
+            merged_arr += arrA
+            arrA = []
+        elif arrA[0] < arrB[0]:
+            merged_arr.append(arrA.pop(0))
+        else:
+            merged_arr.append(arrB.pop(0))
     
     return merged_arr
 
